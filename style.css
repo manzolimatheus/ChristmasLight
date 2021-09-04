@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+  background-image: url("https://wallpapercave.com/wp/wp5100828.png");
+  background-size: cover;
+  background-position: center;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  background-color: white;
+  width: 80%;
+  padding: 3%;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.line {
+  width: 100%;
+}
+
+hr {
+  border: 5px solid rgb(40, 19, 49);
+}
+
+button {
+  border: 0;
+  padding: 3%;
+  border-radius: 10px;
+  color: white;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #00b2df;
+}
+
+a {
+  color: #00b2df;
+  text-decoration: none;
+  padding-left: 5%;
+}
+
+#input_intervalo {
+  font-size: xx-large;
+  width: 80%;
+}
+
+#s {
+  font-size: xx-large;
+}
+
+#owner {
+  margin-top: 10%;
+}
+
+.github_icon {
+  width: 30px;
+}
+
+.error {
+  color: tomato;
+  background-color: #ffc5bb;
+  border: tomato 5px;
+  border-radius: 10px;
+  padding: 3%;
+  margin-bottom: 3%;
+}
+
+.botao_fechar {
+  color: tomato;
+}
+
+#submit {
+  width: fit-content !important;
+  background-color: #64e28e;
+  margin-left: 5%;
+  padding: 1%;
+}
+
+#submit:hover {
+  background-color: #59c07b;
+}
+
+#remove {
+  width: fit-content !important;
+  background-color: tomato;
+  margin-left: 5%;
+  padding: 1%;
+}
+
+#remove:hover {
+  background-color: #ce5742;
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+  }
+}
+
+.lights {
+  margin-top: -3.7%;
+  display: flex;
+  width: 100%;
+  margin-bottom: 10%;
+}
+
+/* Cores */
+
+.light {
+  width: 100px;
+  height: 100px;
+  margin: 3%;
+  border-radius: 80%;
+}
+
+.base {
+  width: 100%;
+  background-color: #c9c9c9;
+  height: 50%;
+}
+
+@keyframes light {
+  0% {
+    box-shadow: 0 0 10px -10px white;
+  }
+}

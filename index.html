@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChristmasLight</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="shortcut icon"
+      href="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/120/google/298/vertical-traffic-light_1f6a6.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <div id="app" class="container">
+      <h1>🎄 Luzes de natal</h1>
+      <div class="error" v-show="error">Limite máximo de luzes atingido!
+        <a href="" @click="dismiss" class="botao_fechar">X</a>
+      </div>
+      <div class="line">
+        <hr />
+      </div>
+      <div class="lights">
+        <div
+          class="light"
+          v-for="cor in cores"
+          :style="cor[2]? {'backgroundColor': cor, 'boxShadow': `0px 0px 50px 10px ${cor[1]}`, 'animation': `light ${intervalo}s infinite alternate`} : {'backgroundColor': cor}"
+        >
+          <div class="base"></div>
+        </div>
+      </div>
+
+      <div v-if="cores.length > 0">
+        <div v-if="estaLigado === true">
+          <h3>Velocidade da transição</h3>
+          <input
+            type="number"
+            v-model="intervalo"
+            step="0.1"
+            min="0.1"
+            max="5"
+            id="input_intervalo"
+          /><span id="s">s</span> <br /><br />
+          <button @click="TurnOnOff" style="background-color: tomato">
+            Desligar
+          </button>
+        </div>
+        <div v-else>
+          <button @click="TurnOnOff" style="background-color: #00ccff">
+            Ligar
+          </button>
+        </div>
+      </div>
+        
+
+      <div>
+        <br />
+        Adicionar luz
+        <br /><br />
+
+        <input type="color" v-model="input_cor" />
+
+        <button id="submit" @click="AdicionaLuz">Adicionar</button>
+        <button id="remove" @click="LimpaLuz">Limpar</button>
+      </div>
+
+      <footer>
+        <p id="owner">Feito por @manzolimatheus - {{AnoAtual}}</p>
+        <a href="https://github.com/manzolimatheus">
+          <img
+            src="https://image.flaticon.com/icons/png/512/25/25231.png"
+            alt="Github Icon"
+            class="github_icon"
+          />
+        </a>
+      </footer>
+    </div>
+  </body>
+</html>
